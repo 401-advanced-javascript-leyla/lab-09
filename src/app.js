@@ -80,7 +80,7 @@ function postCategories(request,response,next) {
   return categories.create(request.body)
     .then( result => { 
       // console.log('this is in postcategory',result);
-      return response.status(201).json(result[0]);
+      return response.status(201).json(result);
     })
     .catch( err=>console.log(err) );
 }
@@ -89,7 +89,7 @@ function postCategories(request,response,next) {
 function putCategories(request,response,next) {
   // expects the record that was just updated in the database
   return categories.update(request.params.id, request.body)
-    .then( result => response.status(200).json(result[0]) )
+    .then( result => response.status(200).json(result) )
     .catch( err=>console.log(err) );
 }
 
@@ -119,8 +119,8 @@ function getProduct(request,response,next) {
   // expects an array with one object in it
   return products.get(request.params.id)
     .then( result => {
-      console.log('this is in getProduct w id', result[0]);
-      return response.status(200).json(result[0]); 
+      // console.log('this is in getProduct w id', result);
+      return response.status(200).json(result); 
     })
     .catch( err=>console.log(err) );
 }
@@ -139,7 +139,10 @@ function postProducts(request,response,next) {
 function putProducts(request,response,next) {
   // expects the record that was just updated in the database
   return products.update(request.params.id, request.body)
-    .then( result => response.status(200).json(result) )
+    .then( result => {
+      console.log('this is in the puPro func', result);
+      return response.status(200).json(result); 
+    })
     .catch( err=>console.log(err) );
 }
 
