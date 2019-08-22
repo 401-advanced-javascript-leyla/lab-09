@@ -18,7 +18,7 @@ class Model {
    */
   get(_id) {
     if(_id){
-      console.log('got in get method and check id', _id);
+    //   console.log('got in get method and check id', _id);
       // console.log('this is the id obj it found',schema.findOne({_id}));
       return this.schema.findOne({_id})
         .then(results => {
