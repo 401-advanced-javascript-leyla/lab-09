@@ -20,6 +20,7 @@
 
 ### Setup
 * `PORT` - 3000
+* `SWAGGER PORT` - 5000
 * `MONGODB_URI` - inclueded in index.js
 
 #### Running the app
