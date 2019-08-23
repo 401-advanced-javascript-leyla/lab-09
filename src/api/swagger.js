@@ -22,10 +22,10 @@ let options = {
     },
   },
   basedir: __dirname, //app absolute path
-  files: ['./*.js'], //Path to the API handle folder
+  files: ['../../routes/api.js'], //Path to the API handle folder
 };
 expressSwagger(options);
 
 // start up a specific standalone swagger server on a specific port
 // http://[domain]/api-docs
-swaggerServer.listen(3333);
+swaggerServer.listen(5000);

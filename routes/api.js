@@ -6,9 +6,18 @@ const modelLoader = require('../src/middleware/model-loader');
 
 const router = express.Router();
 
+
 router.param('model', modelLoader);
 
+/**
+ * @route GET /api/v1/:model
+ * @param {string} password.query.required - user's password.
+ * @returns {string} 200 a status code means okay
+ * @returns {object}  return all the data
+ * @returns {Error} returns an error
+ */
 router.get('/api/v1/:model', handleGetAll);
+
 router.get('/api/v1/:model/:id', handleGetOne);
 router.post('/api/v1/:model', handleCreate);
 router.put('/api/v1/:model/:id', handleUpdate);
