@@ -19,7 +19,6 @@ router.get('/api/v1/:model/schema', (request, response) => {
   response.status(200).json(request.model.jsonSchema());
 });
 
-
 router.get('/api/v1/:model', handleGetAll);
 router.post('/api/v1/:model', handlePost);
 router.get('/api/v1/:model/:id', handleGetOne);

@@ -1,15 +1,16 @@
-# LAB-08
+# LAB-09
 
 ## Express Routing and Connected API
 
 ### Author: Leyla Li
 
 ### Links and Resources
-* [submission PR](https://github.com/401-advanced-javascript-leyla/lab-08/pulls)
-* [travis](https://www.travis-ci.com/search/lab-08)
+* [submission PR](https://github.com/401-advanced-javascript-leyla/lab-09/pulls)
+* [travis](https://www.travis-ci.com/search/lab-09)
 
 #### Documentation
-* [jsdoc](http://xyz.com)
+* [jsdoc](http://localhost:3000/api/v1/docs)
+* [jsdoc](http://localhost:5000/api-docs)
 
 
 ### Modules
