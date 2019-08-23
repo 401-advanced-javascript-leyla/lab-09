@@ -19,7 +19,9 @@
   "devDependencies": {
     "eslint": "^6.1.0",
     "eslint-plugin-react": "^7.14.3",
-    "jest": "^24.8.0"
+    "express-swagger-generator": "^1.1.15",
+    "jest": "^24.8.0",
+    "jsdoc": "^3.6.3"
   },
   "dependencies": {
     "cors": "^2.8.5",
