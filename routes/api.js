@@ -14,6 +14,14 @@ router.post('/api/v1/:model', handleCreate);
 router.put('/api/v1/:model/:id', handleUpdate);
 router.delete('/api/v1/:model/:id', handleDelete);
 
+/**
+   * handler function for the route to get data from database
+   * @param request {object} 
+   * @param response {object}
+   * @param next {function} a middleware function for the route to get data from the database
+   * @returns {string} the status code 200 and {object}
+   */
+
 function handleGetAll(request,response,next) {
   // expects an array of objects back
   request.model.get()
@@ -28,6 +36,15 @@ function handleGetAll(request,response,next) {
     .catch( err=>console.log(err) );
 }
 
+/**
+   * handler function for the route to get one data with the given id from database
+   * @param request {object} 
+   * @param response {object}
+   * @param request.params.id {string}
+   * @param next {function} a middleware function for the route to get data with the id from the database
+   * @returns {string} the status code 200 and {object}
+   */
+
 function handleGetOne(request,response,next) {
   // expects an array with one object in it
   request.model.get(request.params.id)
@@ -38,6 +55,15 @@ function handleGetOne(request,response,next) {
     .catch( err=>console.log(err) );
 }
 
+/**
+   * handler function for the route to create data from database with the request.body
+   * @param request {object} 
+   * @param response {object}
+   * @param request.body {object}
+   * @param next {function} a middleware function for the route to create data from the database
+   * @returns {string} the status code 201 and {object}
+   */
+
 function handleCreate(request,response,next) {
   // expects the record that was just added to the database
   request.model.create(request.body)
@@ -47,6 +73,16 @@ function handleCreate(request,response,next) {
     })
     .catch( err=>console.log(err) );
 }
+
+/**
+   * handler function for the route to delete one data with the given id from database
+   * @param request {object} 
+   * @param response {object}
+   * @param request.params.id {string}
+   * @param request.body {object}
+   * @param next {function} a middleware function for the route to delete data from the database
+   * @returns {string} the status code 200 and {object}
+   */
 
 
 function handleUpdate(request,response,next) {

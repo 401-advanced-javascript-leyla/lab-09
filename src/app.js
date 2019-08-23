@@ -5,7 +5,7 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 
-const apiRouter = require('./routes/api.js');
+const apiRouter = require('../routes/api');
 
 // Esoteric Resources
 const errorHandler = require( './middleware/error.js');
@@ -21,12 +21,17 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
+//jsdoc
+app.use('/docs', express.static('./docs'));
+
 // Routes
 app.use(apiRouter);
 
 // Catchalls
 app.use('/*',notFound);
 app.use(errorHandler);
+
+
 
 // app.listen(3000, () => console.log(`Server up on port 3000`) );
 module.exports = {
